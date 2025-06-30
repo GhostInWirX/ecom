@@ -6,7 +6,7 @@ import { CarouserData } from './MainCrouseldata'; // Importing the data
 
 const items = CarouserData.map((item) => (
     <img
-        className="cursor-pointer w-[9000px] h-[400px] object-cover"
+        className="cursor-pointer w-full h-[400px] object-cover"
         role="presentation"
         src={item.images}
         alt=""
