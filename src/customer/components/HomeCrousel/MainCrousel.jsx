@@ -21,7 +21,7 @@ const MainCarousel = () => {
                 autoPlay
                 autoPlayInterval={1000}
                 infinite
-                disableDotsControls={false}
+                disableDotsControls={true}
                 disableButtonsControls={true}
             />
         </div>

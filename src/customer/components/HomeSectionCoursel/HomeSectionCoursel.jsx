@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
-const HomeSectionCrousel =({data})=>{
+const HomeSectionCrousel =({data,category})=>{
   const [activeindex,setactiveindex]=useState(0)
   const carouselRef = useRef();
     const responsive = {
@@ -22,6 +22,10 @@ const syncActiveIndex = (e) => setactiveindex(e.item);
 const items=data.slice(0,10).map((item)=><HomeSectionCard product={item}/>)
     return(
         <div className="relative px-4 lg:px-8 ">
+          <div className="py-6 text-center">
+             <h1 className="text-3xl font-bold text-gray-800">{category}</h1>
+          </div>
+
          <div className="relative p-5 ">
             <AliceCarousel
               ref={carouselRef}
