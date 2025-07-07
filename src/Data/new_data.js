@@ -25,7 +25,7 @@ export const data_set=[
     "id": 3,
     "title": "Studio Edge",
     "description": "Studio shot of model leaning in edgy outfit.",
-    "category": "Fashion",
+    "category": "Pajamas",
     "subCategory": "Studio",
     "price": 140.00,
     "originalPrice": 250.00,
@@ -69,12 +69,12 @@ export const data_set=[
     "id": 7,
     "title": "Cool Denim",
     "description": "Denim ensemble shot in a relaxed pose.",
-    "category": "Fashion",
-    "subCategory": "Denim",
+    "category": "Riaz",
+    "subCategory": "Shirt",
     "price": 90.00,
     "originalPrice": 145.00,
     "discount": "38%",
-    "imageUrl": "https://stock.adobe.com/images/fashion-model-male-jeans"
+    "imageUrl": "https://t3.ftcdn.net/jpg/04/62/81/14/360_F_462811465_H2EZlYsZjoHbqiv4RkvXqdWJmbIMMmKN.webp"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@ export const data_set=[
     "price": 200.00,
     "originalPrice": 320.00,
     "discount": "38%",
-    "imageUrl": "https://stock.adobe.com/images/fashion-male-model-suit"
+    "imageUrl": "https://t4.ftcdn.net/jpg/02/61/52/95/240_F_261529596_YZWJaMnYFSCM0FSCrxs71o6RrZ9MpP4D.jpg"
   },
   {
     "id": 9,

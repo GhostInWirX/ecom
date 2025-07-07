@@ -16,7 +16,8 @@ import {
   TabPanels,
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
+import Product from '../Products/Product'
+import { data_set } from '../../../Data/new_data'
 const navigation = {
   categories: [
     {
@@ -41,7 +42,7 @@ const navigation = {
           id: 'clothing',
           name: 'Clothing',
           items: [
-            { name: 'Tops', href: '#' },
+            { name: 'Tops',  href: <Product product={data_set}/>  },
             { name: 'Dresses', href: '#' },
             { name: 'Pants', href: '#' },
             { name: 'Denim', href: '#' },
@@ -101,7 +102,7 @@ const navigation = {
           id: 'clothing',
           name: 'Clothing',
           items: [
-            { name: 'Tops', href: '#' },
+            { name: 'Tops', href: <Product product={data_set}/> },
             { name: 'Pants', href: '#' },
             { name: 'Sweaters', href: '#' },
             { name: 'T-Shirts', href: '#' },
