@@ -17,7 +17,9 @@
 */
 import { StarIcon } from '@heroicons/react/20/solid'
 import ReactImageZoom from 'react-img-zoom';
-import { Rating } from '@mui/material';
+import { Rating ,Box} from '@mui/material';
+import { Productreviewcard } from './ProductCard';
+import {Grid} from '@mui/material'
 const product = {
   name: 'Basic Tee 6-Pack',
   price: '$192',
@@ -257,7 +259,68 @@ export default function ProductDetails() {
             </div>
           </div>
         </div>
+        </section>
 
+        <section className='px-6 py-8'>
+          <h1 className='font-semibold text-lg pb-4'> Recent Reviews And Rating</h1>
+          <div className='border border-white p-5 rounded-lg'>
+
+            <Grid container columns={12} spacing={4} justifyContent="space-between">
+              {/*LeftSide Review Card */}
+              <Grid xs={12} md={5}>
+                <div className='space-y-5'>
+                {[1,1,1].map((_,index)=>(
+                  <Productreviewcard key={index}/>
+                ))}
+
+                </div>
+              </Grid>
+              {/* Right Side - Prodcut Ratings*/}
+              <Grid xs={12} md={7}>
+                <div className='w-full flex flex-col items-end text-right'>
+                  <h1 className='font-semibold text-xl pb-4 pt-0'> Product Ratings</h1>
+                  <div className='flex items-center space-x-10 mb-4'>
+                     <Rating name="half-rating" value={4} defaultValue={2.5} precision={0.5} readOnly />
+                    <p className='opacity-60'>65,743 Rating</p>
+                  </div>
+                  <Box className="w-full">
+                    <Grid container columns={12} alignItems="center" columnSpacing={2}>
+                      <Grid xs={4}>
+
+                        <div className='w-full'>
+                          {[
+                            {label:'Excellent' ,value:70 ,color:"bg-green-500"},
+                            {label:'Good' ,value:50 ,color:"bg-blue-500"},
+                            {label:'Average' ,value:40 ,color:"bg-yellow-500"},
+                            {label:'Poor' ,value:20 ,color:"bg-red-500"},
+                          ].map((item,i)=>(
+                            <>
+                              <div key={i} className='mb-4 flex items-center'>
+                                <span className="w-20 text-sm font-medium">{item.label}</span>
+                                <div className="flex-1 mx-2 h-3 rounded-full bg-gray-200">
+                                  <div className={`${item.color} h-3 rounded-full`} style={{ width: `${item.value}%` }}></div>
+                                </div>
+                                <span className="w-10 text-sm font-medium">{item.value}%</span>
+                              </div>
+                              <div className='bg-gray-200 rounded-full h-3 w-50'>
+                               </div>
+                            </>
+                          ))}
+                        </div>
+                      </Grid>
+                    </Grid>
+                  </Box>
+
+                </div>
+
+              </Grid>
+
+
+            </Grid>
+
+
+
+          </div>
 
         </section>
       </div>

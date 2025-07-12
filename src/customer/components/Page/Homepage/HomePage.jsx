@@ -6,6 +6,7 @@ import ProductCard from "../../Products/Productcard";
 import Product from "../../Products/Product";
 import { data_set } from "../../../../Data/new_data";
 import ProductDetails from "../../ProductDetails/ProductDetails";
+import { Cart } from "../../Cart/Cart";
 
 const HomePage = () => {
     return (
@@ -18,7 +19,8 @@ const HomePage = () => {
             <div>
                 <Product product={data_set}/>
             </div> */}
-            <ProductDetails/>
+            {/* <ProductDetails/> */}
+            <Cart/>
             <div>
                     <Footer/>
             </div>
