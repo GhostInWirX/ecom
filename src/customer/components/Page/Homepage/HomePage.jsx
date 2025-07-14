@@ -7,7 +7,7 @@ import Product from "../../Products/Product";
 import { data_set } from "../../../../Data/new_data";
 import ProductDetails from "../../ProductDetails/ProductDetails";
 import { Cart } from "../../Cart/Cart";
-
+import CheckOut from "../../CheckOut/CheckOut";
 const HomePage = () => {
     return (
         <div>
@@ -19,8 +19,9 @@ const HomePage = () => {
             <div>
                 <Product product={data_set}/>
             </div> */}
-            <ProductDetails/>
-            <Cart/>
+            {/* <ProductDetails/> */}
+            {/* <Cart/> */}
+            <CheckOut/>
             <div>
                     <Footer/>
             </div>
