@@ -276,43 +276,43 @@ export default function ProductDetails() {
                 </div>
               </Grid>
               {/* Right Side - Prodcut Ratings*/}
-              <Grid xs={12} md={7}>
-                <div className='w-full flex flex-col items-end text-right'>
-                  <h1 className='font-semibold text-xl pb-4 pt-0'> Product Ratings</h1>
-                  <div className='flex items-center space-x-10 mb-4'>
-                     <Rating name="half-rating" value={4} defaultValue={2.5} precision={0.5} readOnly />
-                    <p className='opacity-60'>65,743 Rating</p>
+          <Grid xs={12} md={7}>
+                <div className="w-full flex flex-col items-end text-right">
+                  <h1 className="text-xl font-semibold pb-3 pt-0">Product Ratings</h1>
+
+                  <div className="flex items-center space-x-10 mb-4">
+                    <Rating readOnly value={4} precision={0.5} />
+                    <p className="opacity-60">65,743 Ratings</p>
                   </div>
+
                   <Box className="w-full">
                     <Grid container columns={12} alignItems="center" columnSpacing={2}>
                       <Grid xs={4}>
-
-                        <div className='w-full'>
+                        <div className="w-full">
                           {[
-                            {label:'Excellent' ,value:70 ,color:"bg-green-500"},
-                            {label:'Good' ,value:50 ,color:"bg-blue-500"},
-                            {label:'Average' ,value:40 ,color:"bg-yellow-500"},
-                            {label:'Poor' ,value:20 ,color:"bg-red-500"},
-                          ].map((item,i)=>(
-                            <>
-                              <div key={i} className='mb-4 flex items-center'>
-                                <span className="w-20 text-sm font-medium">{item.label}</span>
-                                <div className="flex-1 mx-2 h-3 rounded-full bg-gray-200">
-                                  <div className={`${item.color} h-3 rounded-full`} style={{ width: `${item.value}%` }}></div>
-                                </div>
-                                <span className="w-10 text-sm font-medium">{item.value}%</span>
+                            { label: 'Excellent', value: 70, color: 'bg-green-500' },
+                            { label: 'Good', value: 20, color: 'bg-blue-500' },
+                            { label: 'Average', value: 7, color: 'bg-yellow-400' },
+                            { label: 'Poor', value: 3, color: 'bg-red-500' },
+                          ].map((item, i) => (
+                            <div key={i} className="mb-4">
+                              <div className="flex justify-between mb-1 text-sm text-gray-700">
+                                <span>{item.label}</span>
+                                <span>{item.value}%</span>
                               </div>
-                              <div className='bg-gray-200 rounded-full h-3 w-50'>
-                               </div>
-                            </>
+                              <div className="bg-gray-200 rounded-full h-3 w-50">
+                                <div
+                                  className={`${item.color} h-3 rounded-full`}
+                                  style={{ width: `${item.value}%` }}
+                                ></div>
+                              </div>
+                            </div>
                           ))}
                         </div>
                       </Grid>
                     </Grid>
                   </Box>
-
                 </div>
-
               </Grid>
 
 

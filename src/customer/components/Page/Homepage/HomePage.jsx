@@ -19,7 +19,7 @@ const HomePage = () => {
             <div>
                 <Product product={data_set}/>
             </div> */}
-            {/* <ProductDetails/> */}
+            <ProductDetails/>
             <Cart/>
             <div>
                     <Footer/>
