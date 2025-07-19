@@ -51,7 +51,11 @@ export default function CheckOut() {
           <Typography sx={{ mt: 2, mb: 1 }}></Typography>
       
           <div className='mt-10'>
-            {activeStep==2?<DeliveryAddress/>:<OrderSummary/>}
+             {(() => {
+              if (activeStep === 2) return <DeliveryAddress />;
+              if (activeStep === 3) return <OrderSummary />;
+              return null;
+            })()}
           </div>
         </React.Fragment>
       )}

@@ -8,6 +8,8 @@ import { data_set } from "../../../../Data/new_data";
 import ProductDetails from "../../ProductDetails/ProductDetails";
 import { Cart } from "../../Cart/Cart";
 import CheckOut from "../../CheckOut/CheckOut";
+import { Order } from "../../Order/Order";
+import { OrderDetails } from "../../Order/OrderDetails";
 const HomePage = () => {
     return (
         <div>
@@ -21,7 +23,9 @@ const HomePage = () => {
             </div> */}
             {/* <ProductDetails/> */}
             {/* <Cart/> */}
-            <CheckOut/>
+            {/* <CheckOut/> */}
+            {/* <Order/> */}
+            <OrderDetails/>
             <div>
                     <Footer/>
             </div>
