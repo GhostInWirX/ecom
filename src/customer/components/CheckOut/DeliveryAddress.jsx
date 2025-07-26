@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Grid, Button, Box, TextField } from '@mui/material';
 import { AddressCard } from "../AddressForm/AddressForm";
-
+import { useNavigate } from 'react-router-dom';
 export const DeliveryAddress = () => {
+    const navigate=useNavigate();
+
+    const HandleOrderSummary=()=>{
+        navigate('/checkout?step=3')
+    }
+
+
+
   const [address, setAddress] = useState({});
 
   const handleSubmite = (e) => {
@@ -24,7 +32,7 @@ export const DeliveryAddress = () => {
         <Box sx={{ border: 1, borderColor: 'white', boxShadow: 3, borderRadius: 2, height: '30.5rem', overflowY: 'scroll' }} ml={5} width={500} mt={4}>
           <div className="p-5 py-7 border-b cursor-pointer">
             <AddressCard {...address} />
-            <Button
+            <Button onClick={HandleOrderSummary}
               sx={{ mt: 2, bgcolor: 'rgb(145, 85, 253)' }}
               size="large"
               variant="contained"

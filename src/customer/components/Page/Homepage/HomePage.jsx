@@ -13,22 +13,22 @@ import { OrderDetails } from "../../Order/OrderDetails";
 const HomePage = () => {
     return (
         <div>
-            {/* <MainCarousel /> */}
-            {/* <div className="space-y-10 py-20 flex flex-col justify-center px-5 lg:px-10">
+            <MainCarousel />
+            <div className="space-y-10 py-20 flex flex-col justify-center px-5 lg:px-10">
             <HomeSectionCrousel data={CoatData} category={"Coat"}/>
             <HomeSectionCrousel data={CoatData} />
             </div>
-            <div>
+            {/* <div>
                 <Product product={data_set}/>
-            </div> */}
+            </div> */} 
             {/* <ProductDetails/> */}
             {/* <Cart/> */}
             {/* <CheckOut/> */}
-            {/* <Order/> */}
+            {/* <Order/>
             <OrderDetails/>
             <div>
                     <Footer/>
-            </div>
+            </div> */}
         </div>
     );
 };

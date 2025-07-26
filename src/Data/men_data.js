@@ -1,4 +1,4 @@
-export const data_set=[
+export const men_data = [
   {
     "id": 1,
     "title": "Urban City Style",
@@ -52,7 +52,7 @@ export const data_set=[
     "price": 110.00,
     "originalPrice": 170.00,
     "discount": "35%",
-    "imageUrl": "https://www.vecteezy.com/free-photos/male-fashion-model.jpg"
+    "imageUrl": "https://www.vecteezy.com/free-photos/male-fashion-model"
   },
   {
     "id": 6,
@@ -109,4 +109,4 @@ export const data_set=[
     "discount": "38%",
     "imageUrl": "https://stock.adobe.com/images/casual-male-model"
   }
-]
+];

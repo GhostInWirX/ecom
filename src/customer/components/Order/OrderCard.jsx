@@ -1,8 +1,10 @@
 import React from "react";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { useNavigate } from "react-router-dom";
 export const OrderCard=()=>{
+       const navigate=useNavigate()
     return(
-        <div className="bg-white rounded-md shadow-black p-5 w-full mx-auto hover:shadow-2xl border">
+        <div  onClick={() => navigate(`${3}`)} className="bg-white rounded-md shadow-black p-5 w-full mx-auto hover:shadow-2xl border">
             <div className="flex items-center gap-6 w-full">
                 {/*Image Div */}
                 <img src="https://as1.ftcdn.net/v2/jpg/04/33/68/84/1000_F_433688443_15MjJmYAGLrEbymhwRUkX2HtOnb95rdw.jpg" alt="" className="w-15 h-15 object-cover rounded "/>

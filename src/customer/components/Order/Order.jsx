@@ -1,7 +1,11 @@
 import React from 'react'
 import { Grid } from '@mui/material'
 import { OrderCard } from './OrderCard'
+import { useNavigate } from 'react-router-dom'
 export const Order =()=>{
+    const navigate=useNavigate()
+   
+
     const OrderStatus =[
         {label:'On The Way' , value :'On The Way'},
         {label:'Delivered' , value :'Delivered'},

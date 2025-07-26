@@ -1,8 +1,15 @@
 import react from 'react'
 import { CartItem } from './CartItem'
 import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 export const Cart = ()=>
 {
+    const navigate=useNavigate();
+
+    const HandleCheckOut=()=>{
+        navigate('/checkout?step=2')
+    }
+    
     return(
         <div className='min-h-screen bg-gray-50 py-10 px-4 lg:px-16'>
             <div className='grid lg:grid-cols-3 gap-8'>
@@ -28,7 +35,7 @@ export const Cart = ()=>
                             <span className='text-green-700'>950</span>
                         </div>
                     </div>
-                      <Button variant='contained' className='w-full ' sx={{px:"2rem" , py:".7rem", bgcolor:"purple",mt:3}}>CheckOut</Button>
+                      <Button onClick={ HandleCheckOut } variant='contained' className='w-full ' sx={{px:"2rem" , py:".7rem", bgcolor:"purple",mt:3}}>CheckOut</Button>
                 </div>
             </div>
         </div>
