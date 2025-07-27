@@ -1,7 +1,5 @@
-import React from "react";
-
-const HomeSectionCard = ({product}) =>{
-
+import React from "react"
+const HomeSectionCard =({product})=>{
 
     return(
     
