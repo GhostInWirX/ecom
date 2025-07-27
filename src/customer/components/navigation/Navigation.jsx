@@ -1,20 +1,36 @@
 'use client'
-
+import { Cart } from "../Cart/Cart";
+import { Router, Routes, Route } from "react-router-dom"
 import { Fragment, useState } from 'react'
 import {
   Dialog,
   DialogBackdrop,
   DialogPanel,
   Popover,
+  PopoverButton,
   PopoverGroup,
+  PopoverPanel,
+  Tab,
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useNavigate } from 'react-router-dom'
 
 const navigation = {
   categories: [
-    { id: 'women', name: 'Women' },
-    { id: 'men', name: 'Men' },
+    {
+      id: 'women',
+      name: 'Women',
+
+    },
+    {
+      id: 'men',
+      name: 'Men',
+
+    },
   ],
   pages: [
     { name: 'Company', href: '#' },
@@ -22,144 +38,185 @@ const navigation = {
   ],
 }
 
+
 export default function Navigation() {
-  const [open, setOpen] = useState(false)  // Mobile menu
-  const [drawerOpen, setDrawerOpen] = useState(false) // Right side user drawer
-  const navigate = useNavigate()
+  const [open, setOpen] = useState(false)
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    navigate("/cart");
+  }
 
   const handleCategoryClick = (category) => {
-    navigate(`/${category.id}/category=${category.id}`)
-  }
+    navigate(`/${category.id}/category=${category.id}`);
+  };
 
-  const handleOrdersClick = () => {
-    navigate('/account/order')
-    setDrawerOpen(false)
-  }
 
   return (
     <div className="bg-white">
-      {/* Mobile Menu */}
-      <Dialog open={open} onClose={setOpen} className="relative z-40 lg:hidden">
-        <DialogBackdrop className="fixed inset-0 bg-black/25 transition-opacity" />
-        <div className="fixed inset-0 z-40 flex">
-          <DialogPanel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
-            <div className="flex px-4 pt-5 pb-2">
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
-              >
-                <XMarkIcon className="size-6" aria-hidden="true" />
-              </button>
-            </div>
-
-            {/* Categories */}
-            <div className="mt-2 px-4">
-              {navigation.categories.map((category) => (
-                <div
-                  key={category.name}
-                  onClick={() => handleCategoryClick(category)}
-                  className="block py-4 text-base font-medium text-gray-900 cursor-pointer"
-                >
-                  {category.name}
-                </div>
-              ))}
-            </div>
-          </DialogPanel>
-        </div>
-      </Dialog>
-
-      {/* ✅ Right Drawer for Account */}
-      <Dialog open={drawerOpen} onClose={setDrawerOpen} className="relative z-50">
+      {/* Mobile menu */}
+      <Dialog open={open} onClose={setOpen} className="relative z-40">
+        {/* Backdrop */}
         <DialogBackdrop className="fixed inset-0 bg-black/30 transition-opacity" />
+
+        {/* Drawer */}
         <div className="fixed inset-0 flex justify-end">
-          <DialogPanel className="w-72 bg-white shadow-xl p-6 flex flex-col space-y-6">
-            <div className="flex justify-between items-center">
-              <h2 className="text-lg font-semibold">My Account</h2>
-              <button onClick={() => setDrawerOpen(false)}>
-                <XMarkIcon className="size-6 text-gray-500" />
+          <DialogPanel
+            transition
+            className="relative w-72 max-w-xs bg-white shadow-xl transform transition-transform duration-300 ease-in-out data-[closed]:translate-x-full"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200">
+              <div className="flex items-center">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/847/847969.png" // Replace with your logo
+                  alt="User Logo"
+                  className="h-10 w-10 rounded-full"
+                />
+                <span className="ml-3 text-lg font-semibold text-gray-800">
+                  Welcome
+                </span>
+              </div>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <XMarkIcon className="h-6 w-6" />
               </button>
             </div>
-            <hr />
-            <div
-              className="cursor-pointer text-gray-700 hover:text-indigo-600 font-medium"
-              onClick={handleOrdersClick}
-            >
-              My Orders
-            </div>
-            <div
-              className="cursor-pointer text-gray-700 hover:text-indigo-600 font-medium"
-              onClick={() => { alert('Profile page coming soon!') }}
-            >
-              My Profile
+
+            {/* Options */}
+            <div className="flex flex-col mt-4 space-y-4 px-4">
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  navigate("/profile");
+                }}
+                className="w-full text-left px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg font-medium text-gray-700"
+              >
+                Profile
+              </button>
+
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  navigate("/account/order");
+                }}
+                className="w-full text-left px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg font-medium text-gray-700"
+              >
+                My Orders
+              </button>
+
+              <button
+                onClick={() => {
+                  setOpen(false);
+                  // Add logout functionality here
+                  console.log("User logged out");
+                }}
+                className="w-full text-left px-4 py-3 bg-red-100 hover:bg-red-200 rounded-lg font-medium text-red-600"
+              >
+                Logout
+              </button>
             </div>
           </DialogPanel>
         </div>
       </Dialog>
 
-      {/* Header */}
       <header className="relative bg-white">
 
-        <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
-              {/* Mobile menu button */}
               <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="rounded-md bg-white p-2 text-gray-400 lg:hidden"
+                className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
               >
-                <Bars3Icon className="size-6" />
+                <span className="absolute -inset-0.5" />
+                <span className="sr-only">Open menu</span>
+                <Bars3Icon aria-hidden="true" className="size-6" />
               </button>
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 <a href="/">
+                  <span className="sr-only">Your Company</span>
                   <img
-                    alt="Logo"
-                    src="https://e7.pngegg.com/pngimages/674/477/png-clipart-lacoste-logo-brand-clothing-polo-shirt-polo-shirt-text-fashion.png"
-                    className="h-8 w-auto"
+                    alt=""
+                    src="https://e7.pngegg.com/pngimages/64/316/png-clipart-logo-brand-lacoste-clothing-crocodile-crocodile-animals-text.png"
+                    className="h-20 w-auto p-2"
                   />
                 </a>
               </div>
 
-              {/* Desktop navigation */}
-              <PopoverGroup className="hidden lg:ml-8 lg:block">
-                <div className="flex space-x-8">
+              {/* Flyout menus */}
+              <PopoverGroup className="hidden lg:ml-8 lg:block lg:self-stretch">
+                <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
                     <a
                       key={category.name}
                       onClick={() => handleCategoryClick(category)}
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800 cursor-pointer"
+                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800 cursor-pointer"
                     >
                       {category.name}
+                    </a>
+                  ))}
+                  {navigation.pages.map((page) => (
+                    <a
+                      key={page.name}
+                      href={page.href}
+                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                    >
+                      {page.name}
                     </a>
                   ))}
                 </div>
               </PopoverGroup>
 
-              <div className="ml-auto flex items-center">
-                {/* ✅ Replace Sign-in with Account Drawer Button */}
+              <div className="ml-auto flex items-center space-x-4">
+                {/* User Drawer Button */}
                 <button
-                  onClick={() => setDrawerOpen(true)}
-                  className="hidden lg:block text-sm font-medium text-gray-700 hover:text-indigo-600"
+                  onClick={() => setOpen(true)}
+                  className="p-2 rounded-full text-gray-600 hover:text-gray-800 hover:bg-gray-100"
                 >
-                  My Account
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/847/847969.png" // User icon
+                    alt="User"
+                    className="h-8 w-8 rounded-full"
+                  />
                 </button>
 
+                {/* Currency */}
+                <div className="hidden lg:flex items-center">
+                  <img
+                    alt=""
+                    src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
+                    className="block h-auto w-5 shrink-0"
+                  />
+                  <span className="ml-2 text-sm font-medium">CAD</span>
+                </div>
+
                 {/* Search */}
-                <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
-                    <MagnifyingGlassIcon className="size-6" />
-                  </a>
+                <div>
+                  <button className="p-2 text-gray-400 hover:text-gray-500">
+                    <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
+                  </button>
                 </div>
 
                 {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
-                  <a href="/cart" className="group -m-2 flex items-center p-2">
-                    <ShoppingBagIcon className="size-6 text-gray-400 group-hover:text-gray-500" />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-                  </a>
+                <div>
+                  <button
+                    onClick={handleCartClick}
+                    className="group -m-2 flex items-center p-2"
+                  >
+                    <ShoppingBagIcon
+                      aria-hidden="true"
+                      className="h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                    />
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                      0
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
