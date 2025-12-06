@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Custom carousel styles */
+.alice-carousel__wrapper {
+  overflow: hidden;
+}
+
+.alice-carousel__stage {
+  display: flex;
+  align-items: center;
+}
+
+.alice-carousel__stage-item {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.alice-carousel__dots {
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.alice-carousel__dots-item {
+  display: inline-block;
+  margin: 0 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alice-carousel__dots-item.__active {
+  background-color: #3b82f6;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.alice-carousel__prev-btn:hover,
+.alice-carousel__next-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.alice-carousel__prev-btn {
+  left: 10px;
+}
+
+.alice-carousel__next-btn {
+  right: 10px;
+}
+
