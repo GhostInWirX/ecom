@@ -34,6 +34,11 @@ export const CustomRouters=()=>{
            <Route path="/account/order" element={<Order/>}/>
            <Route path="/account/order/:orderid" element={<OrderDetails/>}/>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
         </Routes>
 
 

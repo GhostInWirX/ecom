@@ -2,7 +2,10 @@
 import { Cart } from "../Cart/Cart";
 import { Router, Routes, Route } from "react-router-dom"
 import { Fragment, useState } from 'react'
+<<<<<<< HEAD
 import Authmodal from "../Auth/Authmodal";
+=======
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
 import {
   Dialog,
   DialogBackdrop,
@@ -19,7 +22,10 @@ import {
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useNavigate } from 'react-router-dom'
+<<<<<<< HEAD
 import RegisterForm from "../Auth/Registration.jsx";
+=======
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
 
 const navigation = {
   categories: [
@@ -44,8 +50,12 @@ const navigation = {
 export default function Navigation() {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate();
+<<<<<<< HEAD
   const [authModalOpen, setAuthModalOpen] = useState(false)
   const [openRegister, setOpenRegister] = useState(false)
+=======
+
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
   const handleCartClick = () => {
     navigate("/cart");
   }
@@ -198,13 +208,18 @@ export default function Navigation() {
                   />
                   <span className="ml-2 text-sm font-medium">CAD</span>
                 </div>
+<<<<<<< HEAD
                 <div></div>
+=======
+
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
                 {/* Search */}
                 <div>
                   <button className="p-2 text-gray-400 hover:text-gray-500">
                     <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
                   </button>
                 </div>
+<<<<<<< HEAD
                 <RegisterForm
                   open={openRegister}
                   handleClose={() => setOpenRegister(false)}
@@ -222,6 +237,9 @@ export default function Navigation() {
                     SignUp/Login
                   </button>
                 </div>
+=======
+
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
                 {/* Cart */}
                 <div>
                   <button
@@ -242,10 +260,13 @@ export default function Navigation() {
           </div>
         </nav>
       </header>
+<<<<<<< HEAD
       <Authmodal
         open={authModalOpen}
         handleClose={() => setAuthModalOpen(false)}
       />
+=======
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
     </div>
   )
 }

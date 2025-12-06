@@ -12,7 +12,11 @@ export default defineConfig([
       js.configs.recommended,
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
+<<<<<<< HEAD
      ], 
+=======
+    ],
+>>>>>>> 1a45e2a01562cbc7b19b6e9aa626d8a93398226b
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,

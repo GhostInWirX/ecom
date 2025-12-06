@@ -1,0 +1,72 @@
+export const men_data = [
+  {
+    "id": 2,
+    "title": "Slim Fit Jacket",
+    "description": "Winter Wear",
+    "price": 149,
+    "originalPrice": 299,
+    "discount": "50% Off",
+    "imageUrl": "https://as2.ftcdn.net/v2/jpg/03/15/68/09/1000_F_315680915_p3UYwOkxwtWDUMd2mrMCZIs58NwGJS2s.jpg",
+    "nav_gender": "men",
+    "nav_section": "clothing",
+    "nav_item": "Jackets",
+    "category": "Outerwear",
+    "subCategory": "Jackets"
+  },
+  {
+    "id": 4,
+    "title": "Streetwear Hoodie",
+    "description": "Urban Style",
+    "price": 59,
+    "originalPrice": 119,
+    "discount": "50% Off",
+    "imageUrl": "https://as2.ftcdn.net/v2/jpg/02/54/75/08/1000_F_254750859_tR9rULM2Vqptmt6TccCuTewzyQ4CayT8.jpg",
+    "nav_gender": "men",
+    "nav_section": "clothing",
+    "nav_item": "Sweaters",
+    "category": "Tops",
+    "subCategory": "Hoodies"
+  },
+  {
+    "id": 5,
+    "title": "Leather Boots",
+    "description": "Premium Footwear",
+    "price": 129,
+    "originalPrice": 259,
+    "discount": "50% Off",
+    "imageUrl": "https://as1.ftcdn.net/v2/jpg/02/45/95/16/1000_F_245951697_4JkaCbt2A68whHsxCkTgMHBRIXQ3gIhf.jpg",
+    "nav_gender": "men",
+    "nav_section": "accessories",
+    "nav_item": "Belts",
+    "category": "Footwear",
+    "subCategory": "Boots"
+  },
+  {
+    "id": 7,
+    "title": "Formal Blazer",
+    "description": "Office Essentials",
+    "price": 199,
+    "originalPrice": 399,
+    "discount": "50% Off",
+    "imageUrl": "https://as2.ftcdn.net/v2/jpg/03/27/10/97/1000_F_327109757_wyaNsf89VGcmV1D2J2Vm1gUAWGMezGMN.jpg",
+    "nav_gender": "men",
+    "nav_section": "clothing",
+    "nav_item": "Jackets",
+    "category": "Outerwear",
+    "subCategory": "Blazers"
+  },
+  {
+    "id": 9,
+    "title": "Chino Pants",
+    "description": "Smart Casual",
+    "price": 55,
+    "originalPrice": 110,
+    "discount": "50% Off",
+    "imageUrl": "https://as2.ftcdn.net/v2/jpg/02/60/96/67/1000_F_260966701_8BvbfU6ohC4eJdvIbBlT8XAV3uK0czKg.jpg",
+    "nav_gender": "men",
+    "nav_section": "clothing",
+    "nav_item": "Pants",
+    "category": "Bottoms",
+    "subCategory": "Chinos"
+  }
+]; 
